@@ -22,6 +22,9 @@
 
 # misc
 .DS_Store
+
+# Claude / Cursor worktrees & skills (çok büyük; Vercel için gerekli değil)
+.claude/
 *.pem
 
 # debug
