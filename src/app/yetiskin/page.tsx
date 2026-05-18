@@ -197,28 +197,6 @@ function AdultMenuRow({
             </div>
           ))}
         </div>
-
-        <div className="mt-8 flex items-end justify-between border-t border-white/10 pt-6">
-          <div>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-white/40">
-              Fiyat
-            </span>
-            <div className="mt-1 text-3xl font-extralight text-white">
-              {item.price !== null ? (
-                <>
-                  {item.price}
-                  <span className="ml-1 font-bold text-amber-400">
-                    {item.currency}
-                  </span>
-                </>
-              ) : (
-                <span className="text-base font-medium uppercase tracking-[0.25em] text-amber-300/80">
-                  Fiyat Yakında
-                </span>
-              )}
-            </div>
-          </div>
-        </div>
       </div>
     </motion.article>
   );

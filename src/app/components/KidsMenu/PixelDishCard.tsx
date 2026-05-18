@@ -46,20 +46,6 @@ export function PixelDishCard({ item, index }: Props) {
           </p>
         </div>
       </div>
-      <div className="mt-4 flex items-center justify-between border-t-4 border-dashed border-pixel-ink pt-3">
-        <span
-          className="text-[10px] tracking-widest text-pixel-ink"
-          style={{ fontFamily: "var(--font-pixel-display)" }}
-        >
-          ★ FIYAT
-        </span>
-        <span
-          className="bg-pixel-ink px-3 py-1 text-[11px] text-pixel-sun"
-          style={{ fontFamily: "var(--font-pixel-display)" }}
-        >
-          {item.price}
-        </span>
-      </div>
     </motion.article>
   );
 }

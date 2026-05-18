@@ -5,9 +5,6 @@ export type MenuItem = {
   description: string;
   includes: string[];
   drinkOptions?: string[];
-  /** null/undefined = fiyat henüz açıklanmadı */
-  price: number | null;
-  currency: string;
   image: string;
   badge?: string;
   /** Adult menu kategorileri için (Imza, Combo, …) */
@@ -31,8 +28,6 @@ export const kidsMenu: MenuItem[] = [
       "Yumuşacık ekmek arasında dana köfte, eriyen cheddar ve özel sosla; çocuklar için tam porsiyon mutluluk.",
     includes: ["2 adet mini burger", "Çıtır patates", "İçecek dahil"],
     drinkOptions: ["Fanta", "Cola", "Ayran"],
-    price: 550,
-    currency: "₺",
     image: "/images/miniburger.jpg",
     badge: "EN POPÜLER",
   },
@@ -44,8 +39,6 @@ export const kidsMenu: MenuItem[] = [
       "Çıtır çıtır tavuk lokmaları, altın sarısı patates ve buz gibi içecekle çocukların favori menüsü.",
     includes: ["Çıtır tavuk lokmaları", "Çıtır patates", "İçecek dahil"],
     drinkOptions: ["Fanta", "Cola", "Ayran"],
-    price: 495,
-    currency: "₺",
     image: "/images/miniburger.jpg",
     badge: "EKONOMİK",
   },
@@ -65,8 +58,6 @@ export const adultMenu: MenuItem[] = [
       "Ev yapımı acılı sos",
       "Soğuk içecek",
     ],
-    price: 349,
-    currency: "₺",
     image: "/images/miniburger.jpg",
     badge: "ŞEFİN İMZASI",
     category: "İmza Menü",
@@ -84,8 +75,6 @@ export const adultMenu: MenuItem[] = [
       "Patates kızartması",
       "Soğuk içecek",
     ],
-    price: null,
-    currency: "₺",
     image: "/images/miniburger.jpg",
     badge: "COMBO",
     category: "Combo Menü",
@@ -103,8 +92,6 @@ export const adultMenu: MenuItem[] = [
       "Ev yapımı sos",
       "Soğuk içecek",
     ],
-    price: null,
-    currency: "₺",
     image: "/images/miniburger.jpg",
     badge: "COMBO",
     category: "Combo Menü",

@@ -2,7 +2,6 @@ export type PixelMenuItem = {
   id: string;
   name: string;
   description: string;
-  price: string;
   tag?: "Şef Önerisi" | "Yeni" | "İmza";
 };
 
@@ -22,7 +21,6 @@ export const pixelAdultMenu: PixelCategory[] = [
         name: "Butcha Burger Menü",
         description:
           "Butcha imza burger + patates kızartması + içecek dahil. İçecek seçenekleri: Ayran, Fanta, Kola.",
-        price: "₺ 710",
         tag: "İmza",
       },
       {
@@ -30,7 +28,6 @@ export const pixelAdultMenu: PixelCategory[] = [
         name: "Butcha Köfte Menü",
         description:
           "Özel harç ızgara köfte + patates kızartması + içecek dahil. İçecek seçenekleri: Ayran, Fanta, Kola.",
-        price: "₺ 720",
         tag: "İmza",
       },
     ],
@@ -47,7 +44,6 @@ export const pixelKidsMenu: PixelCategory[] = [
         name: "Baby Hamburger Menü — Etli",
         description:
           "Mini dana hamburger + patates kızartması + içecek. İçecek seçenekleri: Ayran, Fanta, Kola.",
-        price: "₺ 550",
         tag: "İmza",
       },
       {
@@ -55,7 +51,6 @@ export const pixelKidsMenu: PixelCategory[] = [
         name: "Baby Hamburger Menü — Tavuklu",
         description:
           "Mini tavuk hamburger + patates kızartması + içecek. İçecek seçenekleri: Ayran, Fanta, Kola.",
-        price: "₺ 490",
       },
     ],
   },
@@ -67,7 +62,6 @@ export const pixelKidsMenu: PixelCategory[] = [
         id: "spaghetti",
         name: "Spagetti",
         description: "Domates sos, parmesan rendesi.",
-        price: "₺ 300",
       },
     ],
   },
@@ -79,13 +73,11 @@ export const pixelKidsMenu: PixelCategory[] = [
         id: "kola",
         name: "Kola",
         description: "Soğuk servis, ekstra içecek.",
-        price: "₺ 195",
       },
       {
         id: "limonata",
         name: "Limonata",
         description: "Taze sıkım, nane yapraklı.",
-        price: "₺ 200",
       },
     ],
   },

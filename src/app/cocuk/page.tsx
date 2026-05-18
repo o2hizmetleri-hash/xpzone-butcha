@@ -158,23 +158,6 @@ function KidsMenuCard({ item, index }: { item: MenuItem; index: number }) {
         </div>
       )}
 
-      <div className="mt-7 flex items-end justify-between border-t border-stone-200 pt-5">
-        <div>
-          <span className="text-[10px] uppercase tracking-[0.3em] text-stone-500">
-            Fiyat
-          </span>
-          <div className="mt-1 text-3xl font-black text-rose-700">
-            {item.price !== null ? (
-              <>
-                {item.price}
-                <span className="ml-1 text-xl font-bold">{item.currency}</span>
-              </>
-            ) : (
-              <span className="text-xl font-bold text-stone-400">Yakında</span>
-            )}
-          </div>
-        </div>
-      </div>
     </motion.article>
   );
 }
