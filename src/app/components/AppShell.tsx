@@ -8,6 +8,7 @@ import { PIXEL_PAGE_GRADIENT } from "@/lib/pixel-background";
 import { Hero } from "./Hero";
 import { PanelSwitch } from "./PanelSwitch";
 import { PixelWorld } from "./KidsMenu/PixelWorld";
+import { PixelLocationCard } from "./PixelLocationCard";
 
 type Mode = "adult" | "kids";
 
@@ -62,6 +63,7 @@ export function AppShell() {
               footerText="★ AFİYET OLSUN MİNİ ŞEF ★"
             />
           )}
+          <PixelLocationCard />
           <PixelFooter />
         </motion.div>
       </AnimatePresence>

@@ -139,3 +139,44 @@ html:has([data-pixel-shell]) {
     animation: none !important;
   }
 }
+
+/* A5 print — yalnızca /print route'unda kullanılır, ana sayfa görünümünü etkilemez */
+@page {
+  size: A5 portrait;
+  margin: 8mm;
+}
+
+@media print {
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  [data-print-page] {
+    width: 132mm;
+    min-height: 194mm;
+    page-break-after: always;
+    break-after: page;
+    overflow: hidden;
+  }
+
+  [data-print-page]:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  /* Mürekkep tasarrufu: piksel gölgelerini hafifletip animasyonları durdur */
+  .pixel-card,
+  .pixel-btn {
+    box-shadow: 2px 2px 0 var(--color-pixel-ink) !important;
+  }
+
+  .pixel-bounce,
+  .pixel-blink {
+    animation: none !important;
+  }
+}
