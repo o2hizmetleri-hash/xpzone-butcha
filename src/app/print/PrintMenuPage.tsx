@@ -17,8 +17,8 @@ export function PrintMenuPage({ title, subtitle, categories, accent }: Props) {
   return (
     <article
       data-print-page
-      className="relative mx-auto flex w-[132mm] flex-col border-4 border-pixel-ink bg-cream"
-      style={{ minHeight: "194mm" }}
+      className="relative mx-auto flex w-full max-w-[142mm] flex-col border-4 border-pixel-ink bg-cream"
+      style={{ minHeight: "198mm" }}
     >
       {/* Üst başlık şeridi */}
       <header

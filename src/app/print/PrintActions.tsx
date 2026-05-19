@@ -10,7 +10,7 @@ export function PrintActions() {
         className="text-xs leading-tight text-pixel-ink"
         style={{ fontFamily: "var(--font-pixel-display)" }}
       >
-        ★ A5 ÇİFT-TARAFLI ÖNİZLEME
+        ★ BROŞÜR · A4 YATAY · ORTADAN KAT
       </p>
       <button
         type="button"

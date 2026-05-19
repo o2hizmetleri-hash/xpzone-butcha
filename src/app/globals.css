@@ -140,10 +140,10 @@ html:has([data-pixel-shell]) {
   }
 }
 
-/* A5 print — yalnızca /print route'unda kullanılır, ana sayfa görünümünü etkilemez */
+/* Print — yalnızca /print route'unda kullanılır, ana sayfa görünümünü etkilemez */
 @page {
-  size: A5 portrait;
-  margin: 8mm;
+  size: A4 landscape;
+  margin: 6mm;
 }
 
 @media print {
@@ -156,17 +156,30 @@ html:has([data-pixel-shell]) {
     background: #ffffff !important;
   }
 
+  /* Broşür konteyner: tek A4 yatay sayfa, iki A5 sütun yan yana */
+  [data-print-brochure] {
+    width: 285mm;          /* 297mm - 2×6mm margin */
+    height: 198mm;         /* 210mm - 2×6mm margin */
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Her A5 paneli sütuna sığsın */
   [data-print-page] {
-    width: 132mm;
-    min-height: 194mm;
-    page-break-after: always;
-    break-after: page;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
     overflow: hidden;
   }
 
-  [data-print-page]:last-child {
-    page-break-after: auto;
-    break-after: auto;
+  /* Ortadaki kat çizgisi (dashed) */
+  [data-print-fold] {
+    border-left: 1px dashed #9a9a9a !important;
   }
 
   /* Mürekkep tasarrufu: piksel gölgelerini hafifletip animasyonları durdur */
