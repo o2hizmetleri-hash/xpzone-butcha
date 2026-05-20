@@ -141,9 +141,10 @@ html:has([data-pixel-shell]) {
 }
 
 /* Print — yalnızca /print route'unda kullanılır, ana sayfa görünümünü etkilemez */
+/* @page margin: 0 — tüm boşlukları biz kontrol ediyoruz (margin spread içinde) */
 @page {
   size: A4 landscape;
-  margin: 6mm;
+  margin: 0;
 }
 
 @media print {
@@ -154,18 +155,29 @@ html:has([data-pixel-shell]) {
   html,
   body {
     background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Spread konteyneri: tek A4 yatay sayfa, iki A5 sütun yan yana */
+  /* Box-sizing her yerde border-box olsun */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+  }
+
+  /* Spread = tam A4 yatay sayfa */
   [data-print-spread] {
-    width: 285mm;          /* 297mm - 2×6mm margin */
-    height: 198mm;         /* 210mm - 2×6mm margin */
+    width: 297mm !important;
+    height: 210mm !important;
+    padding: 6mm !important;
+    margin: 0 !important;
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 0 !important;
     page-break-after: always;
     break-after: page;
-    margin: 0 !important;
+    overflow: hidden !important;
   }
 
   [data-print-spread]:last-child {
@@ -173,26 +185,28 @@ html:has([data-pixel-shell]) {
     break-after: auto;
   }
 
-  /* Spread içindeki sarmalayıcı (kesme çizgisi için) tam yükseklik */
+  /* Spread içindeki kesme çizgili sarmalayıcı */
   [data-print-fold] {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     border-left: 1px dashed #9a9a9a !important;
+    overflow: hidden !important;
   }
 
-  /* Her A5 paneli sütuna sığsın */
+  /* Her A5 paneli: sütununu KESİN doldursun, taşma yok */
   [data-print-page] {
     width: 100% !important;
     height: 100% !important;
     min-height: 0 !important;
+    max-height: 198mm !important;
     page-break-after: avoid !important;
     break-after: avoid !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
-    overflow: hidden;
+    overflow: hidden !important;
   }
 
-  /* Renkleri olduğu gibi yazdır - tarayıcı color-adjust */
+  /* Renkleri olduğu gibi yazdır */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
@@ -207,5 +221,12 @@ html:has([data-pixel-shell]) {
   .pixel-bounce,
   .pixel-blink {
     animation: none !important;
+  }
+}
+
+/* Ekran preview için A4 yatay spread oranı (1.414:1) */
+@media screen {
+  [data-print-spread] {
+    aspect-ratio: 297 / 210;
   }
 }
